@@ -7,6 +7,12 @@ TagManager:
   - Platform
   - Ouch
   - Item
+  - Enemy
+  - Start
+  - End
+  - HealthPot
+  - JumpPot
+  - PowerUp
   layers:
   - Default
   - TransparentFX
