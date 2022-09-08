@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed;
     public float jumpForce;
 
-    private bool isJumping;
+    public bool isJumping;
     private float moveHorizontal;
     private float moveVertical;
 
@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>(); 
+        
     }
 
     // Update is called once per frame
@@ -33,10 +34,36 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(new Vector2(moveHorizontal * moveSpeed, 0f), ForceMode2D.Impulse);
         }
 
-        if(moveVertical > 0.1f)
+        if(!isJumping && moveVertical > 0.1f)
         {
             rb.AddForce(new Vector2(0f, moveVertical * jumpForce), ForceMode2D.Impulse);
             
+        }
+    }
+
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Platform")
+        {
+            isJumping = false;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Platform")
+        {
+            isJumping = true;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Ouch")
+        {
+            
+            Destroy(gameObject);
         }
     }
 }
