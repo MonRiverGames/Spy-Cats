@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Platform
   - Ouch
+  - Item
   layers:
   - Default
   - TransparentFX
