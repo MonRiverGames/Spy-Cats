@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3166941073299139610}
   - component: {fileID: 3166941073299139612}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Player_David and Zach
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 3166941073299139590}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.1252516, y: 0.05010064, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3166941074465242360}
@@ -163,7 +163,7 @@ MonoBehaviour:
   groundCheck: {fileID: 3166941074465242360}
   groundLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 64
   anim: {fileID: 0}
 --- !u!1 &3166941074083692325
 GameObject:
@@ -191,7 +191,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3166941074083692325}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.2505032, y: -0.10020128, z: -20}
+  m_LocalPosition: {x: 0.2505032, y: 4.6, z: -20}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -225,7 +225,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 3
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
