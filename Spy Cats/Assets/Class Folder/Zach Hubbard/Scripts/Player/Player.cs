@@ -8,53 +8,38 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Rigidbody2D))]
 public class Player : MonoBehaviour
 {
-    float movement = 0f;
-    public float speed = 8f;
-    Rigidbody2D rb;
-    public GameObject GameOverScreen;
-    public float currentHighestHeight = 0;
-    public TextMeshProUGUI scoreText;
+    private float horizontal;
+    private float speed = 8f;
+    private float jumpPower = 8f;
+    private bool isFacingRight = true;
 
-    private void Start()
-    {
-        rb = GetComponent<Rigidbody2D>();   
-    }
+    [SerializeField] Rigidbody2D rb;
 
     // Update is called once per frame
     void Update()
     {
-        movement = Input.GetAxis("Horizontal") * speed;
-    }
+        horizontal = Input.GetAxisRaw("Horizontal");
+        Flip();
 
+        if (Input.GetButtonDown("Jump"))
+        {
+            rb.velocity = new Vector2(rb.velocity.x, jumpPower);
+        }
+
+    }
     private void FixedUpdate()
     {
-        Vector2 velocity = rb.velocity;
-        velocity.x = movement;
-        rb.velocity = velocity;
+        rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void Flip()
     {
-        if (collision.gameObject.CompareTag("Platform"))
+        if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
         {
-            if (collision.transform.position.y > currentHighestHeight)
-            {
-                currentHighestHeight = collision.transform.position.y;
-                string score = scoreText.text;
-                score = score.Substring(7);
-                int scoreNum = int.Parse(score);
-                scoreNum = (int)(transform.position.y + 2.45) * 100;
-                scoreText.text = "Score: " + scoreNum.ToString();
-            }
-        }
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Death"))
-        {
-            print("GAME OVER");
-            GameOverScreen.SetActive(true);
-            Destroy(gameObject);
+            isFacingRight = !isFacingRight;
+            Vector3 localScale = transform.localScale;
+            localScale.x *= -1f;
+            transform.localScale = localScale;
         }
     }
 }
