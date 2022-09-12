@@ -5,7 +5,9 @@ using UnityEngine;
 public class Player_Tessla : MonoBehaviour
 {
     public float movementSpeed = 10f;
+    public float jumpForce = 10f;
     private float movement;
+    private bool isGrounded = true;
 
     Rigidbody2D rb;
     SpriteRenderer sprite;
@@ -19,6 +21,7 @@ public class Player_Tessla : MonoBehaviour
 
     void Update() 
     {
+        // Movement and Animation
         movement = Input.GetAxis("Horizontal") * movementSpeed;   
         animator.SetFloat("Movement", Mathf.Abs(movement));
 
@@ -38,6 +41,29 @@ public class Player_Tessla : MonoBehaviour
     {
         Vector2 velocity = rb.velocity;
         velocity.x = movement;
+
+        // Jump
+        if (Input.GetAxis("Vertical") > 0 && isGrounded)
+        {
+            velocity.y = jumpForce;
+        }
+
         rb.velocity = velocity;
+    }
+
+    private void OnCollisionEnter2D(Collision2D other) 
+    {
+        if (other.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = true;
+        }
+    }
+
+    void OnCollisionExit2D(Collision2D other) 
+    {
+        if (other.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = false;
+        }
     }
 }
