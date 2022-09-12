@@ -14,6 +14,7 @@ TagManager:
   - JumpPot
   - PowerUp
   - Ground
+  - Collectible
   layers:
   - Default
   - TransparentFX
