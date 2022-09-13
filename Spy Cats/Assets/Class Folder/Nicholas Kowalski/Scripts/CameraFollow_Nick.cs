@@ -22,7 +22,7 @@ public class CameraFollow_Nick : MonoBehaviour
         Vector2 targetPos = (Vector2)target.position + offset;
         targetPos.x += targetRB.velocity.x * velocityTrackFactor;
         targetPos.y += targetRB.velocity.y * velocityTrackFactor / 4;
-        Vector2 newPos = Vector2.SmoothDamp(transform.position, targetPos, ref velocity, smoothTime * Time.deltaTime);
+        Vector2 newPos = Vector2.SmoothDamp(transform.position, targetPos, ref velocity, smoothTime);
         transform.position = new Vector3(newPos.x, newPos.y, -10);
     }
 }

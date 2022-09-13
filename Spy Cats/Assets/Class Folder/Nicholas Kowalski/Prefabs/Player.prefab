@@ -148,7 +148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerSpeed: 15
   acceleration: 20
-  jumpVelocity: 20
+  jumpVelocity: 23
   jumpMask:
     serializedVersion: 2
     m_Bits: 59
