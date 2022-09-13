@@ -6,7 +6,7 @@ using TMPro;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class Player : MonoBehaviour
+public class Player_Zach : MonoBehaviour
 {
     private float horizontal;
     public float speed = 8f;
