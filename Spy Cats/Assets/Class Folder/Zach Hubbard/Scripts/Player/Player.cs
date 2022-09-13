@@ -9,8 +9,8 @@ using UnityEngine.UI;
 public class Player : MonoBehaviour
 {
     private float horizontal;
-    private float speed = 8f;
-    private float jumpPower = 8f;
+    public float speed = 8f;
+    public float jumpPower = 8f;
     private bool isFacingRight = true;
 
     [SerializeField] Rigidbody2D rb;
