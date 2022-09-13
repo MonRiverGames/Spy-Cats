@@ -18,6 +18,7 @@ public class PlayerController_Nick : MonoBehaviour
 
     // Status Variables
     private bool isJumping = false;
+    public bool isInvisible = false;
 
     // Start is called before the first frame update
     void Start()
@@ -78,6 +79,12 @@ public class PlayerController_Nick : MonoBehaviour
         isJumping = true;
         myAnimator.SetBool("isJumping", true);
         myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, jumpVelocity);
+    }
+
+    public void ActivatePowerup()
+    {
+        mySpriteRenderer.color = new Color(1, 1, 1, .5f);
+        isInvisible = true;
     }
     
 }

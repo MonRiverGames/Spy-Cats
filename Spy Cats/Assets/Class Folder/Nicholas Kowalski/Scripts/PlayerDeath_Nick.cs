@@ -7,7 +7,7 @@ public class PlayerDeath_Nick : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.GetComponent<PlayerController_Nick>())
+        if (collision.gameObject.GetComponent<PlayerController_Nick>() && !collision.gameObject.GetComponent<PlayerController_Nick>().isInvisible)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
