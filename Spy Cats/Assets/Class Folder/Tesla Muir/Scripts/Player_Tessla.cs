@@ -8,6 +8,7 @@ public class Player_Tessla : MonoBehaviour
     public float jumpForce = 10f;
     private float movement;
     private bool isGrounded = true;
+    private float relativeTime;
 
     Rigidbody2D rb;
     SpriteRenderer sprite;
@@ -43,9 +44,10 @@ public class Player_Tessla : MonoBehaviour
         velocity.x = movement;
 
         // Jump
-        if (Input.GetAxis("Vertical") > 0 && isGrounded && velocity.y == 0)
+        if (Input.GetAxis("Vertical") > 0 && isGrounded && relativeTime <= Time.fixedTime)
         {
             velocity.y = jumpForce;
+            relativeTime = Time.fixedTime + 1.0f;
         }
 
         rb.velocity = velocity;
