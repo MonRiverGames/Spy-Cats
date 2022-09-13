@@ -9,6 +9,7 @@ public class Vision_Tessla : MonoBehaviour
         if (other.tag == "Player")
         {
             Debug.Log("Caught");
+            // Should switch screens to reset instead of destroy
             Destroy(other.gameObject);
         }
     }

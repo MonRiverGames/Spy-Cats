@@ -15,6 +15,7 @@ TagManager:
   - PowerUp
   - Ground
   - Collectible
+  - Vent
   layers:
   - Default
   - TransparentFX
