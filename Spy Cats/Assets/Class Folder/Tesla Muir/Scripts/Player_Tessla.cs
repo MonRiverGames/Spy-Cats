@@ -43,7 +43,7 @@ public class Player_Tessla : MonoBehaviour
         velocity.x = movement;
 
         // Jump
-        if (Input.GetAxis("Vertical") > 0 && isGrounded)
+        if (Input.GetAxis("Vertical") > 0 && isGrounded && velocity.y == 0)
         {
             velocity.y = jumpForce;
         }
