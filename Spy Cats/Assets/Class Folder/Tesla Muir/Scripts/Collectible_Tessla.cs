@@ -8,6 +8,7 @@ public class Collectible_Tessla : MonoBehaviour
     public int numberOfCollectibles = 2;
     public float timeTillDestroyed = 0.1f;
     public AudioSource collectSound;
+    public AudioSource catHappy;
 
     // Amount of Collectibles player has gotten
     private int collectibeCount = 0;
@@ -26,6 +27,7 @@ public class Collectible_Tessla : MonoBehaviour
         if (other.tag == "Vent" && collectibeCount == numberOfCollectibles)
         {
             Debug.Log("Win");
+            catHappy.Play();
             // Change scene
         }
 
