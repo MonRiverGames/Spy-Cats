@@ -6,6 +6,8 @@ public class Player_Tessla : MonoBehaviour
 {
     public float movementSpeed = 10f;
     public float jumpForce = 10f;
+    public AudioSource jumpSound;
+
     private float movement;
     private bool isGrounded = true;
     private float relativeTime;
@@ -47,6 +49,7 @@ public class Player_Tessla : MonoBehaviour
         if (Input.GetAxis("Vertical") > 0 && isGrounded && relativeTime <= Time.fixedTime)
         {
             velocity.y = jumpForce;
+            jumpSound.Play();
             relativeTime = Time.fixedTime + 1.0f;
         }
 

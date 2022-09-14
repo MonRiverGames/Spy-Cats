@@ -7,6 +7,7 @@ public class Collectible_Tessla : MonoBehaviour
     // Total number of Collectibles in level
     public int numberOfCollectibles = 2;
     public float timeTillDestroyed = 0.1f;
+    public AudioSource collectSound;
 
     // Amount of Collectibles player has gotten
     private int collectibeCount = 0;
@@ -17,6 +18,7 @@ public class Collectible_Tessla : MonoBehaviour
         if (other.tag == "Collectible")
         {
             collectibeCount++;
+            collectSound.Play();
             Destroy(other.gameObject, timeTillDestroyed);
         }
 
