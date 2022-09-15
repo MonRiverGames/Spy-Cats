@@ -33,13 +33,13 @@ public class PlayerController_Nick : MonoBehaviour
     {
         SideMovement();
 
-        if (isJumping && IsGrounded())
+        if (isJumping && IsGrounded() && myRigidbody.velocity.y < 0)
         {
             isJumping = false;
             myAnimator.SetBool("isJumping", false);
         }
 
-        if (IsGrounded() && Input.GetAxisRaw("Vertical") > 0)
+        if (IsGrounded() && !isJumping && Input.GetAxisRaw("Vertical") > 0)
         {
             Jump();
         }
@@ -70,8 +70,15 @@ public class PlayerController_Nick : MonoBehaviour
 
     private bool IsGrounded()
     {
-        RaycastHit2D groundCheck = Physics2D.Raycast(transform.position, Vector2.down, 2f);
-        return groundCheck.collider != null;
+        Vector2 ray1Pos = new Vector2(mySpriteRenderer.bounds.center.x, mySpriteRenderer.bounds.min.y);
+        Vector2 ray2Pos = new Vector2(mySpriteRenderer.bounds.min.x + (mySpriteRenderer.bounds.size.x / 4), mySpriteRenderer.bounds.min.y);
+        Vector2 ray3Pos = new Vector2(mySpriteRenderer.bounds.max.x - (mySpriteRenderer.bounds.size.x / 4), mySpriteRenderer.bounds.min.y);
+
+        RaycastHit2D groundCheck1 = Physics2D.Raycast(ray1Pos, Vector2.down, .5f);
+        RaycastHit2D groundCheck2 = Physics2D.Raycast(ray2Pos, Vector2.down, .5f);
+        RaycastHit2D groundCheck3 = Physics2D.Raycast(ray3Pos, Vector2.down, .5f);
+
+        return groundCheck1.collider != null || groundCheck2.collider != null || groundCheck3.collider != null;
     }
 
     void Jump()
