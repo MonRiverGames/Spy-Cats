@@ -7,6 +7,8 @@ public class Collectible_Tessla : MonoBehaviour
     // Total number of Collectibles in level
     public int numberOfCollectibles = 2;
     public float timeTillDestroyed = 0.1f;
+    public GUIStyle style;
+    public GUIStyle style2;
     public AudioSource collectSound;
     public AudioSource catHappy;
 
@@ -36,5 +38,13 @@ public class Collectible_Tessla : MonoBehaviour
             Debug.Log("Missing items!");
             // Notify user
         }
+    }
+
+    void OnGUI() 
+    {
+        style.fontSize = 30;
+        style.normal.textColor = Color.blue;
+        style.fontStyle = FontStyle.Bold;
+        GUI.Label(new Rect(1, 1, 100, 100), "Items Collected: " + collectibeCount.ToString() + " / " + numberOfCollectibles.ToString(), style);
     }
 }
