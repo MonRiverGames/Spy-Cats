@@ -50,9 +50,15 @@ public class Collectible_Tessla : MonoBehaviour
 
     void OnGUI() 
     {
+        // Goal GUI
+        style2.fontSize = 35;
+        style2.normal.textColor = Color.blue;
+        style2.fontStyle = FontStyle.Bold;
+        GUI.Label(new Rect(5, 0, 50, 50), "Collect all items and escape to the chopper!", style2);
+
+        // Items GUI
         style.fontSize = 30;
         style.normal.textColor = Color.blue;
-        style.fontStyle = FontStyle.Bold;
-        GUI.Label(new Rect(1, 1, 100, 100), "Items Collected: " + collectibeCount.ToString() + " / " + numberOfCollectibles.ToString(), style);
+        GUI.Label(new Rect(5, 40, 50, 50), "Items Collected: " + collectibeCount.ToString() + " / " + numberOfCollectibles.ToString(), style);
     }
 }
