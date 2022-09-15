@@ -7,6 +7,7 @@ public class Collectible_Tessla : MonoBehaviour
     // Total number of Collectibles in level
     public int numberOfCollectibles = 4;
     public float timeTillDestroyed = 0.1f;
+    public GameObject ventCover;
     public GUIStyle style;
     public GUIStyle style2;
     public AudioSource collectSound;
@@ -26,7 +27,7 @@ public class Collectible_Tessla : MonoBehaviour
         }
 
         // Win mechanic
-        if (other.tag == "Vent" && collectibeCount == numberOfCollectibles)
+        if (other.gameObject.name == "Helicopter" && collectibeCount == numberOfCollectibles)
         {
             Debug.Log("Win");
             catHappy.Play();
@@ -37,6 +38,13 @@ public class Collectible_Tessla : MonoBehaviour
         {
             Debug.Log("Missing items!");
             // Notify user
+        }
+        
+        if (other.tag == "Vent" && collectibeCount == numberOfCollectibles) 
+        {
+            Debug.Log("Vent opened!");
+            catHappy.Play();
+            Destroy(ventCover);
         }
     }
 
