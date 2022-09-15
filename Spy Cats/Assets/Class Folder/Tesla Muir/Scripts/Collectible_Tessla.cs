@@ -5,7 +5,7 @@ using UnityEngine;
 public class Collectible_Tessla : MonoBehaviour
 {
     // Total number of Collectibles in level
-    public int numberOfCollectibles = 2;
+    public int numberOfCollectibles = 4;
     public float timeTillDestroyed = 0.1f;
     public GUIStyle style;
     public GUIStyle style2;
