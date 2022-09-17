@@ -6,22 +6,27 @@ using TMPro;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class Player : MonoBehaviour
+public class Player_Zach : MonoBehaviour
 {
     private float horizontal;
-    private float speed = 8f;
-    private float jumpPower = 8f;
+    public float speed = 8f;
+    public float jumpPower = 8f;
     private bool isFacingRight = true;
+    bool isGrounded;
+    public LayerMask GroundLayer;
+    public Transform GroundCheck;
 
     [SerializeField] Rigidbody2D rb;
 
     // Update is called once per frame
     void Update()
     {
-        horizontal = Input.GetAxisRaw("Horizontal");
+        isGrounded = Physics2D.OverlapCircle(GroundCheck.position, 0.2f, GroundLayer);
+        horizontal = Input.GetAxis("Horizontal");
+
         Flip();
 
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") & isGrounded)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpPower);
         }

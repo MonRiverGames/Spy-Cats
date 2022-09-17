@@ -5,15 +5,16 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
     public Transform Player;
-    public float CameraSmoothSpeed = .3f;
-    private Vector3 currentVelocity;
+    public float followSpeed = 2f;
+    public float yOffset = -1f;
+    private Vector3 newPos;
 
     void Update()
     {
-        if(Player != null && transform.position.x < Player.position.x)
-        {
-            Vector3 newPos = new Vector3 (transform.position.x, Player.position.y, transform.position.z);
-            transform.position = Vector3.SmoothDamp(transform.position, newPos, ref currentVelocity, CameraSmoothSpeed * Time.deltaTime);
-        }
+      
+        newPos = new Vector3(Player.position.x,Player.position.y + yOffset, -10f);
+        transform.position = Vector3.Slerp(transform.position,newPos,followSpeed * Time.deltaTime);
+
+
     }
 }
