@@ -21,7 +21,7 @@ public class BasicMovement : MonoBehaviour {
         transform.position = transform.position + horizontal * Time.deltaTime;
         if (Input.GetButtonDown("Jump"))
         {
-            
+            rb.velocity = new Vector2(rb.velocity.x, jumpSpeed);
         }
 
     }
