@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Controller : MonoBehaviour
 {
-    // Tweakable constants
+   // Unity Variables
     [SerializeField] private float playerSpeed = 5.0f;
     [SerializeField] private float acceleration = 10.0f;
     [SerializeField] private float jumpVelocity = 5.0f;
@@ -78,6 +78,13 @@ public class Controller : MonoBehaviour
         isJumping = true;
         myAnimator.SetBool("isJumping", true);
         myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, jumpVelocity);
+    }
+    
+    private void OnTrigger2D(Collider2D other) {
+        
+        if (other.gameObject.CompareTag("Diamonds")) {
+            Destroy(other.gameObject);
+        }
     }
     
 }
