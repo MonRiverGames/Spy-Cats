@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Class Folder/Caleb Miller/Scenes/BreakRoom.unity
     guid: 1a24a7f222efe4c689cdaa8c4631f42c
+  - enabled: 1
+    path: Assets/Class Folder/Caleb Miller/Scenes/part2.unity
+    guid: 897a0b88057164cb8a323a9548674c86
   m_configObjects: {}
