@@ -41,7 +41,7 @@ public class PlayerController_Nick : MonoBehaviour
             myAnimator.SetBool("isJumping", false);
         }
 
-        if (IsGrounded() && !isJumping && Input.GetAxisRaw("Vertical") > 0)
+        if (IsGrounded() && !isJumping && (Input.GetAxisRaw("Vertical") > 0 || Input.GetButton("Jump")))
         {
             Jump();
         }
