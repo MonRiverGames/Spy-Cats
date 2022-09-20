@@ -9,7 +9,8 @@ public class PlayerDeath_Nick : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<PlayerController_Nick>() && !collision.gameObject.GetComponent<PlayerController_Nick>().isInvisible)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            collision.gameObject.GetComponent<PlayerController_Nick>().Respawn();
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 }

@@ -19,10 +19,12 @@ public class PlayerController_Nick : MonoBehaviour
     // Status Variables
     private bool isJumping = false;
     public bool isInvisible = false;
+    private Vector3 respawnPoint;
 
     // Start is called before the first frame update
     void Start()
     {
+        respawnPoint = transform.position;
         myRigidbody = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
         mySpriteRenderer = GetComponent<SpriteRenderer>();
@@ -70,15 +72,11 @@ public class PlayerController_Nick : MonoBehaviour
 
     private bool IsGrounded()
     {
-        Vector2 ray1Pos = new Vector2(mySpriteRenderer.bounds.center.x, mySpriteRenderer.bounds.min.y);
-        Vector2 ray2Pos = new Vector2(mySpriteRenderer.bounds.min.x + (mySpriteRenderer.bounds.size.x / 4), mySpriteRenderer.bounds.min.y);
-        Vector2 ray3Pos = new Vector2(mySpriteRenderer.bounds.max.x - (mySpriteRenderer.bounds.size.x / 4), mySpriteRenderer.bounds.min.y);
+        Vector2 origin = new Vector2(mySpriteRenderer.bounds.center.x, mySpriteRenderer.bounds.min.y);
+        Vector2 size = new Vector2(1.85f, .3f);
+        RaycastHit2D groundCheck = Physics2D.BoxCast(origin, size, 0, Vector2.down, .1f);
 
-        RaycastHit2D groundCheck1 = Physics2D.Raycast(ray1Pos, Vector2.down, .5f);
-        RaycastHit2D groundCheck2 = Physics2D.Raycast(ray2Pos, Vector2.down, .5f);
-        RaycastHit2D groundCheck3 = Physics2D.Raycast(ray3Pos, Vector2.down, .5f);
-
-        return groundCheck1.collider != null || groundCheck2.collider != null || groundCheck3.collider != null;
+        return groundCheck;
     }
 
     void Jump()
@@ -92,6 +90,19 @@ public class PlayerController_Nick : MonoBehaviour
     {
         mySpriteRenderer.color = new Color(1, 1, 1, .5f);
         isInvisible = true;
+    }
+
+    public void Respawn()
+    {
+        myRigidbody.velocity = Vector2.zero;
+        transform.position = respawnPoint;
+        isJumping = false;
+        myAnimator.SetBool("isJumping", false);
+    }
+
+    public void SetRespawnPoint(Vector3 newPos)
+    {
+        respawnPoint = newPos;
     }
     
 }
