@@ -15,7 +15,7 @@ public class Player_Zach : MonoBehaviour
     bool isGrounded;
     public LayerMask GroundLayer;
     public Transform GroundCheck;
-
+    public GameObject GameOverScreen;
     [SerializeField] Rigidbody2D rb;
 
     // Update is called once per frame
@@ -30,7 +30,6 @@ public class Player_Zach : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpPower);
         }
-
     }
     private void FixedUpdate()
     {
@@ -45,6 +44,16 @@ public class Player_Zach : MonoBehaviour
             Vector3 localScale = transform.localScale;
             localScale.x *= -1f;
             transform.localScale = localScale;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Death"))
+        {
+            Debug.Log("DEATH");
+            GameOverScreen.SetActive(true);
+            Destroy(gameObject);
         }
     }
 }
