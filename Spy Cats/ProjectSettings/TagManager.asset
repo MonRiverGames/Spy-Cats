@@ -14,6 +14,7 @@ TagManager:
   - JumpPot
   - PowerUp
   - SpecialItem
+  - PlayerCollider
   layers:
   - Default
   - TransparentFX
