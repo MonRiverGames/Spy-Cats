@@ -9,6 +9,15 @@ EditorBuildSettings:
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
+    path: Assets/Class Folder/Jackson Sigler/Scenes/Menu.unity
+    guid: 17c0e5749aeb4e4448652e563185cfc4
+  - enabled: 1
     path: Assets/Class Folder/Zach Hubbard/Scenes/Level 1.unity
     guid: 12ecf5c960dad4c449bdd74234ed20b4
+  - enabled: 1
+    path: Assets/Class Folder/Jackson Sigler/Scenes/SpyCats.unity
+    guid: 5881a5deea1e8034c81639eb3bed1f73
+  - enabled: 1
+    path: Assets/Class Folder/Nicholas Kowalski/Desert Lite.unity
+    guid: dfd04e9c2024dce489aff5a3e4800f13
   m_configObjects: {}

@@ -17,6 +17,11 @@ public class ChangeLevel : MonoBehaviour
         {
             SceneManager.LoadScene(nextSceneIndex);
             Debug.Log("ChangeScene");
+
+            if (nextSceneIndex > PlayerPrefs.GetInt("levelAt"))
+            {
+                PlayerPrefs.SetInt("levelAt", nextSceneIndex);
+            }
         }
     }
 }
