@@ -10978,6 +10978,10 @@ PrefabInstance:
       propertyPath: jumpForce
       value: 18
       objectReference: {fileID: 0}
+    - target: {fileID: 3166941073299139613, guid: 53e3a16b63a5f334b929c1a8757a1664, type: 3}
+      propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3166941074083692325, guid: 53e3a16b63a5f334b929c1a8757a1664, type: 3}
       propertyPath: m_IsActive
       value: 1
