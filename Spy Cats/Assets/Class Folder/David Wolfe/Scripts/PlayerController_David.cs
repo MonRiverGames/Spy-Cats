@@ -6,20 +6,22 @@ using UnityEngine;
 public class PlayerController_David : MonoBehaviour
 {
     private float horizontal;
-    private float speed = 8f;
-    private float jumpForce = 10f;
+    public float speed = 8f;
+    public float jumpForce = 10f;
     private bool isFacingRight = true;
 
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private Animator anim;
+    [SerializeField] private SpriteRenderer sr;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
         anim = gameObject.GetComponent<Animator>();
+        sr = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -51,9 +53,19 @@ public class PlayerController_David : MonoBehaviour
         {
             
             isFacingRight = !isFacingRight;
-            Vector3 localScale = transform.localScale;
-            localScale.x *= -1f;
-            transform.localScale = localScale;
+
+            if (isFacingRight)
+            {
+                sr.flipX = false;
+            }
+
+            if (!isFacingRight)
+            {
+                sr.flipX = true;
+            }
+            //Vector3 localScale = transform.localScale;
+            //localScale.x *= -1f;
+            //transform.localScale = localScale;
         }
         
     }
