@@ -11,12 +11,17 @@ public class Pickup_Zach : MonoBehaviour
     {
         Debug.Log(col.gameObject.tag);
 
-        if (col.gameObject.tag == "Player")
+        if (col.gameObject.tag == "Player" && gameObject.tag == "PowerUp")
         {
             player.jumpPower *= (float) 1.5;
-            Debug.Log("POWER UP");
+            Debug.Log("POWER UP: JUMP BOOST");
             Destroy(gameObject);
-            
+        }
+
+        if (col.gameObject.tag == "Player" && gameObject.tag == "SpecialItem")
+        {
+            Debug.Log("Picked up snowglobe");
+            Destroy(gameObject);
         }
     }
 }

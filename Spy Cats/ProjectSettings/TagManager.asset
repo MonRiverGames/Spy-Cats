@@ -13,6 +13,7 @@ TagManager:
   - HealthPot
   - JumpPot
   - PowerUp
+  - SpecialItem
   layers:
   - Default
   - TransparentFX
