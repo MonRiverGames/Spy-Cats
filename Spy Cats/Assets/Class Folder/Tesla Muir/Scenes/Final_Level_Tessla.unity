@@ -6443,7 +6443,7 @@ MonoBehaviour:
     m_FixedHeight: 0
     m_StretchWidth: 1
     m_StretchHeight: 0
-  style2:
+  boxStyle:
     m_Name: 
     m_Normal:
       m_Background: {fileID: 0}

@@ -9,14 +9,14 @@ public class Collectible_Tessla : MonoBehaviour
     public float timeTillDestroyed = 0.1f;
     public GameObject ventCover;
     public GUIStyle style;
-    public GUIStyle style2;
+    public GUIStyle boxStyle;
     public AudioSource collectSound;
     public AudioSource catHappy;
 
     // Amount of Collectibles player has gotten
     private int collectibeCount = 0;
 
-    void OnTriggerEnter2D(Collider2D other) 
+    void OnTriggerEnter2D(Collider2D other)
     {
         // Collect item
         if (other.tag == "Collectible")
@@ -40,8 +40,8 @@ public class Collectible_Tessla : MonoBehaviour
             Debug.Log("Missing items!");
             // Notify user
         }
-        
-        if (other.tag == "Vent" && collectibeCount == numberOfCollectibles) 
+
+        if (other.tag == "Vent" && collectibeCount == numberOfCollectibles)
         {
             Debug.Log("Vent opened!");
             catHappy.Play();
@@ -49,17 +49,29 @@ public class Collectible_Tessla : MonoBehaviour
         }
     }
 
-    void OnGUI() 
+    void OnGUI()
     {
-        // Goal GUI
-        style2.fontSize = 35;
-        style2.normal.textColor = Color.blue;
-        style2.fontStyle = FontStyle.Bold;
-        GUI.Label(new Rect(5, 0, 50, 50), "Collect all items and escape to the chopper!", style2);
+        // Box behind Items GUI
+        boxStyle.normal.background = MakeTex(2, 2, new Color(0.21f, 0.37f, 0.90f, 0.99f));
+        GUI.Label(new Rect(5, 5, 310, 50), "", boxStyle);
 
         // Items GUI
         style.fontSize = 30;
-        style.normal.textColor = Color.blue;
-        GUI.Label(new Rect(5, 40, 50, 50), "Items Collected: " + collectibeCount.ToString() + " / " + numberOfCollectibles.ToString(), style);
+        style.normal.textColor = Color.white;
+        style.fontStyle = FontStyle.Bold;
+        GUI.Label(new Rect(10, 10, 100, 50), "Items Collected: " + collectibeCount.ToString() + " / " + numberOfCollectibles.ToString(), style);
+    }
+
+    private Texture2D MakeTex(int width, int height, Color col)
+    {
+        Color[] pix = new Color[width * height];
+        for (int i = 0; i < pix.Length; ++i)
+        {
+            pix[i] = col;
+        }
+        Texture2D result = new Texture2D(width, height);
+        result.SetPixels(pix);
+        result.Apply();
+        return result;
     }
 }
