@@ -111,7 +111,7 @@ namespace UnityEditor.U2D.Animation
         {
             m_BoneInfluences = GetController().GetSelectedSpriteBoneInfluence().ToList();
             m_ListView.itemsSource = m_BoneInfluences;
-            m_ListView.Refresh();
+            m_ListView.Rebuild();
         }
 
         internal void OnBoneSelectionChanged()
