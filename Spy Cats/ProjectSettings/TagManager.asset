@@ -13,8 +13,9 @@ TagManager:
   - HealthPot
   - JumpPot
   - PowerUp
-  - SpecialItem
-  - Death
+  - Ground
+  - Collectible
+  - Vent
   layers:
   - Default
   - TransparentFX
