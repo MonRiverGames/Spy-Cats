@@ -7,7 +7,7 @@ public class Diamond: MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.GetComponent<Controller>())
+        if (collision.gameObject.GetComponent<Controller_Jackson>())
         {
             StartCoroutine(Win(3));
         }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Controller : MonoBehaviour
+public class Controller_Jackson : MonoBehaviour
 {
    // Unity Variables
     [SerializeField] private float playerSpeed = 5.0f;
@@ -34,11 +34,12 @@ public class Controller : MonoBehaviour
 
         if (isJumping && IsGrounded())
         {
+            Debug.Log("Jump end");
             isJumping = false;
             myAnimator.SetBool("isJumping", false);
         }
 
-        if (IsGrounded() && Input.GetAxisRaw("Vertical") > 0)
+        if (IsGrounded() && !isJumping && (Input.GetAxisRaw("Vertical") > 0 || Input.GetButton("Jump")))
         {
             Jump();
         }
@@ -69,12 +70,17 @@ public class Controller : MonoBehaviour
 
     private bool IsGrounded()
     {
-        RaycastHit2D groundCheck = Physics2D.Raycast(transform.position, Vector2.down, 2f);
-        return groundCheck.collider != null;
+        Vector2 origin = new Vector2(mySpriteRenderer.bounds.center.x, mySpriteRenderer.bounds.min.y);
+        Vector2 size = new Vector2(.8f, .1f);
+        RaycastHit2D groundCheck = Physics2D.BoxCast(origin, size, 0, Vector2.down, .01f);
+
+        return groundCheck;
     }
+
 
     void Jump()
     {
+        Debug.Log("Jump start");
         isJumping = true;
         myAnimator.SetBool("isJumping", true);
         myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, jumpVelocity);
