@@ -32,6 +32,7 @@ public class Collectible_Tessla : MonoBehaviour
             Debug.Log("Win");
             catHappy.Play();
             // Change scene
+            // You have to make it wait for the sound to stop playing before scene change or the sound won't play fully :c
         }
 
         if (other.tag == "Vent" && collectibeCount != numberOfCollectibles)

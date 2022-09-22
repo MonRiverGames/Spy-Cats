@@ -13,6 +13,7 @@ public class Vision_Tessla : MonoBehaviour
             Debug.Log("Caught");
             catSad.Play();
             // Should switch screens to reset instead of destroy
+            // You have to make it wait for the sound to stop playing before scene change or the sound won't play fully :c
             Destroy(other.gameObject);
         }
     }

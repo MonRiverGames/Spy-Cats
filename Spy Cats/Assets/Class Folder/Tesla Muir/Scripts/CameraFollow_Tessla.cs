@@ -13,7 +13,7 @@ public class CameraFollow_Tessla : MonoBehaviour
     {
         playerHeight = thingToFollow.transform.position.y;
 
-        if (thingToFollow.transform.position.x < 180.0f) {
+        if (thingToFollow.transform.position.x < 170.0f) {
             if (playerHeight + 5 > maxHeight) {
                 transform.position = thingToFollow.transform.position + new Vector3(5, (maxHeight-playerHeight), -10);
             } else {
