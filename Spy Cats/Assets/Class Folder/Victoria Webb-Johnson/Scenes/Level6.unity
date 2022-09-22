@@ -878,9 +878,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a32625be836444e5961a0d2735c3264, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
+  moveSpeed: 1
   jumpForce: 1
-  isJumping: 1
+  isJumping: 0
   anim: {fileID: 0}
 --- !u!111 &64848343
 Animation:
@@ -13156,7 +13156,7 @@ GameObject:
   - component: {fileID: 1901539490}
   m_Layer: 0
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
