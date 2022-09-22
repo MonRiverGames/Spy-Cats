@@ -13,10 +13,14 @@ public class Player : MonoBehaviour
     private float moveHorizontal;
     private float moveVertical;
 
+    public Animator anim;
+    
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = gameObject.GetComponent<Animator>();
 
     }
 
@@ -25,6 +29,8 @@ public class Player : MonoBehaviour
     {
         moveHorizontal = Input.GetAxisRaw("Horizontal");
         moveVertical = Input.GetAxisRaw("Vertical");
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+            anim.Play("sprite");
     }
 
     private void FixedUpdate()
