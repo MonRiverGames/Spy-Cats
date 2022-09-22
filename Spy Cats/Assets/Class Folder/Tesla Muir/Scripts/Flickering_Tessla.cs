@@ -19,22 +19,4 @@ public class Flickering_Tessla : MonoBehaviour
             yield return waiter;
         }
     }
-
-    // void Update() 
-    // {
-    //     relativeTime += Time.deltaTime;
-
-    //     if (relativeTime < 2f)
-    //     {
-    //         sprite.color = new Color(0.255f, 0f, 0f, 0f);
-    //     }
-    //     else
-    //     {
-    //         sprite.color = new Color(0.255f, 0f, 0f, 1f);
-    //         if (relativeTime >= 2f)
-    //         {
-    //             relativeTime = 0f;
-    //         }
-    //     }
-    // }
 }
