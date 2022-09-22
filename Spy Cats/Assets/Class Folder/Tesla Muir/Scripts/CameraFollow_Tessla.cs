@@ -6,8 +6,21 @@ public class CameraFollow_Tessla : MonoBehaviour
 {
     public GameObject thingToFollow;
 
+    private float playerHeight;
+    private float maxHeight = 14.5f;
+
     void Update()
     {
-        transform.position = thingToFollow.transform.position + new Vector3(5, 5, -10);
+        playerHeight = thingToFollow.transform.position.y;
+
+        if (thingToFollow.transform.position.x < 180.0f) {
+            if (playerHeight + 5 > maxHeight) {
+                transform.position = thingToFollow.transform.position + new Vector3(5, (maxHeight-playerHeight), -10);
+            } else {
+                transform.position = thingToFollow.transform.position + new Vector3(5, 5, -10);
+            }
+        } else {
+            transform.position = thingToFollow.transform.position + new Vector3(5, 5, -10);
+        }
     }
 }
