@@ -1810,8 +1810,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1750799257}
   velocityTrackFactor: 1
-  smoothTime: 2
-  offset: {x: 0, y: 0}
+  smoothTime: 1
+  offset: {x: 0, y: 0.4}
 --- !u!1 &603978419
 GameObject:
   m_ObjectHideFlags: 0
@@ -2700,7 +2700,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1021274603}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b01905ac23ca44d4e82ab80532738031, type: 3}
+  m_Script: {fileID: 11500000, guid: 62d0d9ad7596e7749a454c5114757685, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1028559869
@@ -4577,13 +4577,12 @@ GameObject:
   - component: {fileID: 1750799257}
   - component: {fileID: 1750799256}
   - component: {fileID: 1750799255}
-  - component: {fileID: 1750799258}
   - component: {fileID: 1750799260}
   - component: {fileID: 1750799259}
-  - component: {fileID: 1750799261}
-  m_Layer: 0
+  - component: {fileID: 1750799258}
+  m_Layer: 2
   m_Name: Player
-  m_TagString: Player
+  m_TagString: PlayerCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4667,14 +4666,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1750799254}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
   m_LocalPosition: {x: -10.033, y: -4.573, z: 0}
-  m_LocalScale: {x: -0.15216026, y: 0.13670447, z: 0.3156}
+  m_LocalScale: {x: 0.15, y: 0.15, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
 --- !u!114 &1750799258
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4684,13 +4683,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1750799254}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0a0e25381f626c4c81b9f239127fad8, type: 3}
+  m_Script: {fileID: 11500000, guid: 62fd354ebeaaa1b45b21787be18b5b23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  velocityTrackFactor: 1
-  smoothTime: 100
-  offset: {x: 0, y: 0}
+  playerSpeed: 3
+  acceleration: 10
+  jumpVelocity: 5
+  jumpMask:
+    serializedVersion: 2
+    m_Bits: 59
 --- !u!61 &1750799259
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4704,7 +4705,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.19883752, y: -0.7746061}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -4715,7 +4716,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.74, y: 4.38}
+  m_Size: {x: 5.093782, y: 2.5541484}
   m_EdgeRadius: 0
 --- !u!50 &1750799260
 Rigidbody2D:
@@ -4728,34 +4729,16 @@ Rigidbody2D:
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
+  m_UseAutoMass: 1
+  m_Mass: 0.29273123
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &1750799261
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1750799254}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62fd354ebeaaa1b45b21787be18b5b23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerSpeed: 5
-  acceleration: 10
-  jumpVelocity: 5
-  jumpMask:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!1 &1782760197
 GameObject:
   m_ObjectHideFlags: 0
@@ -5250,7 +5233,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1948413040}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.9695, y: -0.986, z: 0}
+  m_LocalPosition: {x: -1.36, y: -0.967, z: 0}
   m_LocalScale: {x: 101.278496, y: 50.970123, z: 82.9011}
   m_ConstrainProportionsScale: 0
   m_Children: []
