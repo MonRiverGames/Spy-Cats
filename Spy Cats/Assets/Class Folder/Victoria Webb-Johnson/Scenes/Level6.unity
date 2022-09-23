@@ -13038,6 +13038,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1953252090077581214, guid: b27ed040f159c42a6af89c1359455195, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4262877525707255297, guid: b27ed040f159c42a6af89c1359455195, type: 3}
       propertyPath: m_Size.x
       value: 4.0492287
@@ -13128,7 +13132,7 @@ NavMeshAgent:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1899449015}
-  m_Enabled: 1
+  m_Enabled: 0
   m_AgentTypeID: 0
   m_Radius: 1.5
   m_Speed: 1
