@@ -10,6 +10,8 @@ public class Controller_Jackson : MonoBehaviour
     [SerializeField] private float jumpVelocity = 5.0f;
     [SerializeField] private LayerMask jumpMask;
 
+    public Vector2 colliderBounds = new Vector2(.8f, .1f);
+    public float rayCastLength = .01f;
 
     // Components
     private Rigidbody2D myRigidbody;
@@ -34,7 +36,6 @@ public class Controller_Jackson : MonoBehaviour
 
         if (isJumping && IsGrounded())
         {
-            Debug.Log("Jump end");
             isJumping = false;
             myAnimator.SetBool("isJumping", false);
         }
@@ -71,8 +72,7 @@ public class Controller_Jackson : MonoBehaviour
     private bool IsGrounded()
     {
         Vector2 origin = new Vector2(mySpriteRenderer.bounds.center.x, mySpriteRenderer.bounds.min.y);
-        Vector2 size = new Vector2(.8f, .1f);
-        RaycastHit2D groundCheck = Physics2D.BoxCast(origin, size, 0, Vector2.down, .01f);
+        RaycastHit2D groundCheck = Physics2D.BoxCast(origin, colliderBounds, 0, Vector2.down, rayCastLength);
 
         return groundCheck;
     }
@@ -80,7 +80,6 @@ public class Controller_Jackson : MonoBehaviour
 
     void Jump()
     {
-        Debug.Log("Jump start");
         isJumping = true;
         myAnimator.SetBool("isJumping", true);
         myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, jumpVelocity);
