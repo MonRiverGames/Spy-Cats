@@ -25,6 +25,11 @@ public class LevelSelection : MonoBehaviour
         {
             cat.gameObject.SetActive(false);
         }
+
+        for (int i = 0; i < levelButtons.Length; i++) {
+            int buttonID = i + 1;
+            levelButtons[i].onClick.AddListener(delegate { LevelLoad(buttonID); });
+        }
     }
 
     private void Update()
@@ -35,20 +40,9 @@ public class LevelSelection : MonoBehaviour
         }
     }
 
-    public void Level1()
+    public void LevelLoad(int index)
     {
-        SceneManager.LoadScene("Level 1");
+        SceneManager.LoadScene(index);
     }
-
-    public void Level2()
-    {
-        SceneManager.LoadScene("Level 2");
-    }
-
-    public void Level3()
-    {
-        SceneManager.LoadScene("Level 3");
-    }
-
 
 }
