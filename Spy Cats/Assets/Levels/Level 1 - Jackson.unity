@@ -937,7 +937,6 @@ GameObject:
   m_Component:
   - component: {fileID: 168739586}
   - component: {fileID: 168739588}
-  - component: {fileID: 168739587}
   m_Layer: 0
   m_Name: Diamonds
   m_TagString: Untagged
@@ -961,18 +960,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &168739587
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 168739585}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9bf895af7ecc8ff4e801047412a01857, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &168739588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7934,6 +7921,8 @@ MonoBehaviour:
   jumpMask:
     serializedVersion: 2
     m_Bits: 59
+  colliderBounds: {x: 0.8, y: 0.1}
+  rayCastLength: 0.01
 --- !u!61 &1750799259
 BoxCollider2D:
   m_ObjectHideFlags: 0
