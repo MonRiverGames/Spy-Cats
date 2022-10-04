@@ -26,6 +26,10 @@ public class GlobalRestart : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.M))
         {
             SceneManager.LoadScene(0);
-        }    
+        }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     }
 }
