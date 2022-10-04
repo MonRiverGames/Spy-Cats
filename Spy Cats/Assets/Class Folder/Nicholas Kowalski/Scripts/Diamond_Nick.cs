@@ -25,6 +25,6 @@ public class Diamond_Nick : MonoBehaviour
             transform.localScale = Vector2.Lerp(startScale, endScale, t);
             yield return null;
         }
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        LevelSelection.NextLevel();
     }
 }

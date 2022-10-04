@@ -23,7 +23,7 @@ public class Pickup_Zach : MonoBehaviour
         {
             Debug.Log("Picked up Snowglobe, Level Complete");
             LevelCompleteUI.SetActive(true);
-            Destroy(gameObject);
+            LevelSelection.NextLevel();
         }
     }
 }

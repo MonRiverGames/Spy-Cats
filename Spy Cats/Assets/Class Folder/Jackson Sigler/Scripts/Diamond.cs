@@ -17,9 +17,13 @@ public class Diamond: MonoBehaviour
     {
         Vector2 startScale = transform.localScale;
         Vector2 endScale = startScale * 2;
-        CameraFollow_JacksonSigler cam = FindObjectOfType<CameraFollow_JacksonSigler>();
-        cam.target = gameObject.transform;
-        cam.velocityTrackFactor = 0;
+
+        if (FindObjectOfType<CameraFollow_JacksonSigler>())
+        {
+            CameraFollow_JacksonSigler cam = FindObjectOfType<CameraFollow_JacksonSigler>();
+            cam.target = gameObject.transform;
+            cam.velocityTrackFactor = 0;
+        }
         for (float t = 0; t < 1; t += Time.unscaledDeltaTime / time)
         {
             transform.localScale = Vector2.Lerp(startScale, endScale, t);

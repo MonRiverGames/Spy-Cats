@@ -29,10 +29,9 @@ public class Collectible_Tessla : MonoBehaviour
         // Win mechanic
         if (other.gameObject.name == "Helicopter" && collectibeCount == numberOfCollectibles)
         {
-            Debug.Log("Win");
+            
             catHappy.Play();
-            // Change scene
-            // You have to make it wait for the sound to stop playing before scene change or the sound won't play fully :c
+            Invoke("ChangeScene", 1);
         }
 
         if (other.tag == "Vent" && collectibeCount != numberOfCollectibles)
@@ -49,6 +48,10 @@ public class Collectible_Tessla : MonoBehaviour
         }
     }
 
+    private void ChangeScene()
+    {
+        LevelSelection.NextLevel();
+    }
     void OnGUI()
     {
         // Box behind Items GUI

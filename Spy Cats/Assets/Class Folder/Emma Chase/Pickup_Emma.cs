@@ -13,7 +13,7 @@ public class Pickup_Emma : MonoBehaviour
     {
         if (col.gameObject.tag == "Player")
         {
-            gameObject.SetActive(false);
+            LevelSelection.NextLevel();
         }
     }
 }

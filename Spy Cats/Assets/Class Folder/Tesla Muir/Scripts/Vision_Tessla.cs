@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Vision_Tessla : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class Vision_Tessla : MonoBehaviour
             catSad.Play();
             // Should switch screens to reset instead of destroy
             // You have to make it wait for the sound to stop playing before scene change or the sound won't play fully :c
-            Destroy(other.gameObject);
+            SceneManager.LoadScene((SceneManager.GetActiveScene().buildIndex));
         }
     }
 }

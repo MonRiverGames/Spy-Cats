@@ -15,9 +15,30 @@ EditorBuildSettings:
     path: Assets/Levels/Level 1 - Jackson.unity
     guid: 5881a5deea1e8034c81639eb3bed1f73
   - enabled: 1
-    path: Assets/Class Folder/Zach Hubbard/Scenes/Level 2 - Zach.unity
+    path: Assets/Levels/Level 2 - Emma.unity
+    guid: e27f9e0167467844fb15c7d2746326b4
+  - enabled: 1
+    path: Assets/Levels/Level 3 - Malachi.unity
+    guid: 1362302e07712c84291679c7e5569818
+  - enabled: 1
+    path: Assets/Levels/Level 4 - Maddi.unity
+    guid: 232a3a5430cbea749819e40c50e4243e
+  - enabled: 1
+    path: Assets/Levels/Level 5 - Tory.unity
+    guid: 9af579df794554f828a3d169a1142274
+  - enabled: 1
+    path: Assets/Levels/Level 6 - Caleb.unity
+    guid: 52cd6cd42019fc24ea9d5507e0bb4632
+  - enabled: 1
+    path: Assets/Levels/Level 7 - Zach.unity
     guid: 12ecf5c960dad4c449bdd74234ed20b4
   - enabled: 1
-    path: Assets/Class Folder/Nicholas Kowalski/Desert Lite.unity
-    guid: dfd04e9c2024dce489aff5a3e4800f13
+    path: Assets/Levels/Level 8 - Nick.unity
+    guid: 257d2234874cefe41b16d0a8c5168098
+  - enabled: 1
+    path: Assets/Levels/Level 9 - Tesla.unity
+    guid: 67c45627c4ee79e40affae811c658e6c
+  - enabled: 1
+    path: Assets/Levels/Secret Level - Nick.unity
+    guid: 66701f5cf70dab84e84e54f0f26b8e00
   m_configObjects: {}
