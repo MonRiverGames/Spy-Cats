@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerControl_Emma : MonoBehaviour
 {
+    public Animator ClarkAnimation;
     private Rigidbody2D rb;
 
     public float moveSpeed;
@@ -25,6 +26,8 @@ public class PlayerControl_Emma : MonoBehaviour
     {
         moveHorizontal = Input.GetAxisRaw("Horizontal");
         moveVertical = Input.GetAxisRaw("Vertical");
+
+        ClarkAnimation.SetFloat("Horizontal", Input.GetAxisRaw("Horizontal"));
     }
 
     private void FixedUpdate()
