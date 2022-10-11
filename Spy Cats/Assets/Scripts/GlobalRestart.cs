@@ -15,8 +15,7 @@ public class GlobalRestart : MonoBehaviour
         } else
         {
             Destroy(gameObject);
-        }
-        
+        }  
     }
 
 

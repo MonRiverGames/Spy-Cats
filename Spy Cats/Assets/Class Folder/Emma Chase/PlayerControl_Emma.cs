@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerControl_Emma : MonoBehaviour
 {
     private Rigidbody2D rb;
+    private SpriteRenderer sr;
 
     public float moveSpeed;
     public float jumpForce;
@@ -17,7 +18,7 @@ public class PlayerControl_Emma : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
+        sr = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -32,35 +33,24 @@ public class PlayerControl_Emma : MonoBehaviour
         if(moveHorizontal > 0.1f || moveHorizontal < -0.1f)
         {
             rb.AddForce(new Vector2(moveHorizontal * moveSpeed, 0f), ForceMode2D.Impulse);
+            sr.flipX = moveHorizontal < 0;
         }
 
-        if(!isJumping && moveVertical > 0.1f)
+        if(!isJumping && (moveVertical > 0.1f || Input.GetButton("Jump")))
         {
-            rb.AddForce(new Vector2(0f, moveVertical * jumpForce), ForceMode2D.Impulse);
-
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            isJumping = true;
         }
     }
 
 
-    void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Platform")
         {
             isJumping = false;
         }
-    }
-
-    void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Platform")
-        {
-            isJumping = true;
-        }
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(collision.gameObject.tag == "Ouch")
+        if (collision.gameObject.tag == "Ouch")
         {
 
             Destroy(gameObject);

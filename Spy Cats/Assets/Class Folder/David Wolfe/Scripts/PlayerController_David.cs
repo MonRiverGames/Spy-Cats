@@ -77,13 +77,13 @@ public class PlayerController_David : MonoBehaviour
     
     public void Jump()
     {
-        if(Input.GetButtonDown("Jump") && IsGrounded())
+        if((Input.GetButtonDown("Jump") || Input.GetAxis("Vertical") > 0) && IsGrounded())
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             anim.Play("CatJump");
         }
         
-        if(Input.GetButtonDown("Jump") && rb.velocity.y > 0f)
+        if ((Input.GetButtonDown("Jump") || Input.GetAxis("Vertical") > 0) && rb.velocity.y > 0f)
         {
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
             anim.Play("CatJump");
