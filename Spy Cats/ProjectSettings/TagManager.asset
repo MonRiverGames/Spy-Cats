@@ -13,14 +13,17 @@ TagManager:
   - HealthPot
   - JumpPot
   - PowerUp
+  - Ground
+  - Collectible
+  - Vent
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Platform
+  - Background
   - Water
   - UI
-  - 
+  - Ground
   - 
   - 
   - 
