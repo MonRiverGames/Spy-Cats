@@ -5,16 +5,24 @@ using UnityEngine.SceneManagement;
 
 public class Diamond: MonoBehaviour
 {
+    AudioSource source;
+    public AudioClip[] levelComplete;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.GetComponent<Controller_Jackson>())
+        if (collision.gameObject.GetComponent<Controller_Jackson>() || collision.name == "Player")
         {
+            LevelComplete();
             StartCoroutine(Win(3));
         }
+    }
+    public void Start()
+    {
+        source = GetComponent<AudioSource>();
     }
 
     IEnumerator Win(float time)
     {
+        
         Vector2 startScale = transform.localScale;
         Vector2 endScale = startScale * 2;
 
@@ -29,6 +37,16 @@ public class Diamond: MonoBehaviour
             transform.localScale = Vector2.Lerp(startScale, endScale, t);
             yield return null;
         }
+        
         LevelSelection.NextLevel();
+        
+    }
+
+    public void LevelComplete()
+    {
+        source.clip = levelComplete[Random.Range(0, levelComplete.Length)];
+        source.PlayOneShot(source.clip);
+
+
     }
 }

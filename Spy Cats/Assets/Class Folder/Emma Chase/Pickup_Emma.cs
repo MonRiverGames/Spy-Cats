@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Pickup_Emma : MonoBehaviour
 {
+    LevelSelection levelSelection;
   void Start(){
     gameObject.SetActive(true);
   }

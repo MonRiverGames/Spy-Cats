@@ -8,6 +8,8 @@ public class LevelSelection : MonoBehaviour
 {
     public Button[] levelButtons;
     public GameObject cat;
+    
+    
 
     public static LevelSelection instance;
     public GameObject loadingScreen;
@@ -68,6 +70,7 @@ public class LevelSelection : MonoBehaviour
 
     public static void NextLevel()
     {
+
         int currentLevel = SceneManager.GetActiveScene().buildIndex;
         int levelAt = PlayerPrefs.GetInt("levelAt", 1);
         if (currentLevel == levelAt)
@@ -76,7 +79,10 @@ public class LevelSelection : MonoBehaviour
             PlayerPrefs.Save();
         }
         SceneManager.LoadScene(0);
+        
     }
+    
+   
 
     public void QuitGame()
     {
