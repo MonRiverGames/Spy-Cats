@@ -81,7 +81,7 @@ public class PlayerController_David : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             anim.Play("CatJump");
-            GlobalSounds.instance.PlayJumpSound();
+            GlobalSounds.PlayJumpSound();
         }
         
         if ((Input.GetButtonDown("Jump") || Input.GetAxis("Vertical") > 0) && rb.velocity.y > 0f)

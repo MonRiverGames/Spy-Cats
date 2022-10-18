@@ -71,19 +71,23 @@ public class Controller_Jackson : MonoBehaviour
 
     private bool IsGrounded()
     {
-        Vector2 origin = new Vector2(mySpriteRenderer.bounds.center.x, mySpriteRenderer.bounds.min.y);
+        Vector2 origin = new Vector2(transform.position.x, transform.position.y);
         RaycastHit2D groundCheck = Physics2D.BoxCast(origin, colliderBounds, 0, Vector2.down, rayCastLength);
 
         return groundCheck;
     }
 
-
+    //private void OnDrawGizmos()
+    //{
+    //    Vector2 origin = new Vector2(transform.position.x, transform.position.y);
+    //    Gizmos.DrawCube(origin, colliderBounds);
+    //}
     void Jump()
     {
         isJumping = true;
         myAnimator.SetBool("isJumping", true);
         myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, jumpVelocity);
-        GlobalSounds.instance.PlayJumpSound();
+        GlobalSounds.PlayJumpSound();
     }
     
     private void OnTrigger2D(Collider2D other) {

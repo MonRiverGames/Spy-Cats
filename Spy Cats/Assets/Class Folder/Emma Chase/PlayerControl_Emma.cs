@@ -40,7 +40,7 @@ public class PlayerControl_Emma : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             if (!isJumping)
-                GlobalSounds.instance.PlayJumpSound();
+                GlobalSounds.PlayJumpSound();
             isJumping = true;
         }
     }

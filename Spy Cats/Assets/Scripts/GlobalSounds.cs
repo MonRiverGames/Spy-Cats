@@ -21,9 +21,9 @@ public class GlobalSounds : MonoBehaviour
         }
     }
 
-    public void PlayJumpSound() {
-        if (jumpSoundSource.isPlaying)
+    public static void PlayJumpSound() {
+        if (!instance || instance.jumpSoundSource.isPlaying)
             return;
-        jumpSoundSource.Play();
+        instance.jumpSoundSource.Play();
     }
 }
