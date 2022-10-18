@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Pickup_Zach : MonoBehaviour
 {
+    LevelSelection levelSelection;
     public Player_Zach player;
     public GameObject pickupObject;
     public GameObject LevelCompleteUI;

@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Diamond_Nick : MonoBehaviour
 {
+    LevelSelection levelSelection;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.GetComponent<PlayerController_Nick>())

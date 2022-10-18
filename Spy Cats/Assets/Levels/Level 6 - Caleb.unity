@@ -1096,12 +1096,12 @@ GameObject:
   - component: {fileID: 441637107}
   - component: {fileID: 441637110}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Hidden Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &441637107
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2978,6 +2978,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62d0d9ad7596e7749a454c5114757685, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelComplete:
+  - {fileID: 8300000, guid: 8ae4dbde299a14b49ae94405f53add5e, type: 3}
+  - {fileID: 8300000, guid: 705f2a5ceed874d469d9bf1672803d86, type: 3}
+  - {fileID: 8300000, guid: d8edaa26ac58b514087bc5b8eccb03a7, type: 3}
 --- !u!1 &1919654270
 GameObject:
   m_ObjectHideFlags: 0
