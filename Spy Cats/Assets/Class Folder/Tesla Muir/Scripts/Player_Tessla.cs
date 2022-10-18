@@ -51,6 +51,7 @@ public class Player_Tessla : MonoBehaviour
             velocity.y = jumpForce;
             jumpSound.Play();
             relativeTime = Time.fixedTime + 1.0f;
+            GlobalSounds.PlayJumpSound();
         }
 
         rb.velocity = velocity;
