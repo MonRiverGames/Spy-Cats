@@ -39,6 +39,8 @@ public class PlayerControl_Emma : MonoBehaviour
         if(!isJumping && (moveVertical > 0.1f || Input.GetButton("Jump")))
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            if (!isJumping)
+                GlobalSounds.instance.PlayJumpSound();
             isJumping = true;
         }
     }

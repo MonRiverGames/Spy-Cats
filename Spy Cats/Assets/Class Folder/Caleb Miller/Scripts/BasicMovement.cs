@@ -27,6 +27,7 @@ public class BasicMovement : MonoBehaviour {
         if (IsGrounded() && (Input.GetButtonDown("Jump") || Input.GetAxis("Vertical") > 0))
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpSpeed);
+            GlobalSounds.instance.PlayJumpSound();
         }
     }
 

@@ -84,6 +84,7 @@ public class PlayerController_Nick : MonoBehaviour
         isJumping = true;
         myAnimator.SetBool("isJumping", true);
         myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, jumpVelocity);
+        GlobalSounds.instance.PlayJumpSound();
     }
 
     public void ActivatePowerup()
