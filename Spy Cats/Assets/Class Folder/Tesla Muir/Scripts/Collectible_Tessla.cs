@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Collectible_Tessla : MonoBehaviour
 {
-    LevelSelection levelSelection;
     // Total number of Collectibles in level
     public int numberOfCollectibles = 4;
     public float timeTillDestroyed = 0.1f;
@@ -14,6 +13,7 @@ public class Collectible_Tessla : MonoBehaviour
     public AudioSource collectSound;
     public AudioSource catHappy;
 
+    public bool immediateWin = false;
     // Amount of Collectibles player has gotten
     private int collectibeCount = 0;
 
@@ -23,6 +23,12 @@ public class Collectible_Tessla : MonoBehaviour
         if (other.tag == "Collectible")
         {
             collectibeCount++;
+            if (collectibeCount == numberOfCollectibles)
+            {
+                catHappy.Play();
+                Invoke("ChangeScene", 1);
+            }
+            
             collectSound.Play();
             Destroy(other.gameObject, timeTillDestroyed);
         }

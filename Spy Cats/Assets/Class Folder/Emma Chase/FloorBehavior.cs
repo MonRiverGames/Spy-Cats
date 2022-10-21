@@ -24,7 +24,7 @@ public class FloorBehavior : MonoBehaviour
 
     private void CheckFloor()
     {
-      if(ball1.activeInHierarchy == false && ball2.activeInHierarchy == false){
+      if(ball1 == null && ball2 == null){
         floor.SetActive(false);
       }
     }
