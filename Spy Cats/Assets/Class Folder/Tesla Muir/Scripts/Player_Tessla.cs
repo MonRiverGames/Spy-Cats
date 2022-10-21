@@ -46,7 +46,7 @@ public class Player_Tessla : MonoBehaviour
         velocity.x = movement;
 
         // Jump
-        if (Input.GetAxis("Vertical") > 0 && isGrounded && relativeTime <= Time.fixedTime)
+        if (Input.GetAxis("Vertical") > 0 && isGrounded || Input.GetKey(KeyCode.Space) && isGrounded)
         {
             velocity.y = jumpForce;
             jumpSound.Play();
