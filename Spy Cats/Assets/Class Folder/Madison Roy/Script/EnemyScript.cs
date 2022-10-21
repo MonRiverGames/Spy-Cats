@@ -5,69 +5,86 @@ using UnityEngine;
 public class EnemyScript : MonoBehaviour
 {
 
-    [SerializeField]
-    Transform player;
+    public float speed;
+    public GameObject player;
+    public Vector3 startingPointPos;
+    public bool chase;
+    public float chaseDistance;
     
-    [SerializeField]
-    float agroRange;
-
-    [SerializeField]
-    float moveSpeed;
-
-    Rigidbody2D rb2d;
-
-
-
-
-
-    // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
-        rb2d = GetComponent<Rigidbody2D>();
+        player = GameObject.Find("Player");
+        startingPointPos = transform.position;
+
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Update()
     {
-        //distance to player
-        float distToPlayer = Vector2.Distance( transform.position, player.position);
-        
-        if(distToPlayer < agroRange)
+        if(player == null)
         {
-            //code to chase player
-            ChasePlayer();
+            return;
+        }
 
+        if (!chase)
+        {
+            ReturnToStart();
+        }
+
+        if (chase)
+        {
+            Flip();
+        }
+
+        Chase();
+        
+
+        Debug.Log(transform.position.x - player.transform.position.x);
+    }
+
+    public void Chase()
+    {
+        float distance = Mathf.Abs(transform.position.x - player.transform.position.x);
+        
+        if (distance < chaseDistance)
+        {
+            
+            chase = true;
+            transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
         }
         else
         {
-            //stop chasing player
-            StopChasingPlayer();
+            chase = false;
         }
+
+
     }
 
-    void ChasePlayer()
+    public void Flip()
     {
-        if (transform.position.x < player.position.x)
+        if (transform.position.x > player.transform.position.x)
         {
-            //enemy is to left of player, so move right
-            rb2d.velocity = new Vector2(moveSpeed, 0);
-            transform.localScale = new Vector2(1, 1);
-
+            transform.rotation = Quaternion.Euler(0, 0, 0);
         }
-        else if (transform.position.x < player.position.x)
+        else
         {
-            //enemy is to the right of the player,so move left
-            rb2d.velocity = new Vector2(-moveSpeed, 0);
-            transform.localScale = new Vector2(-1, 1);
-        }
-    }
-
-     void StopChasingPlayer()
-    {
-        rb2d.velocity = new Vector2(0, 0);
+            transform.rotation = Quaternion.Euler(0, 180, 0);
+        }   
     }
     
-  
-
-
+    public void ReturnToStart()
+    {
+        transform.position = Vector2.MoveTowards(transform.position, startingPointPos, speed * Time.deltaTime);
+        if (!chase)
+        {
+            if (transform.position.x > startingPointPos.x)
+            {
+                transform.rotation = Quaternion.Euler(0, 0, 0);
+            }
+            else
+            {
+                transform.rotation = Quaternion.Euler(0, 180, 0);
+            }
+        }
+       
+    }
 }
