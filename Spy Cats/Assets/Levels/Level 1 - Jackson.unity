@@ -8669,7 +8669,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 59
   colliderBounds: {x: 0.8, y: 0.25}
-  rayCastLength: 0.1
+  rayCastLength: 0.37
+  isGrounded: 0
+  offSet: {x: 0, y: 0, z: 0}
 --- !u!61 &1750799259
 BoxCollider2D:
   m_ObjectHideFlags: 0

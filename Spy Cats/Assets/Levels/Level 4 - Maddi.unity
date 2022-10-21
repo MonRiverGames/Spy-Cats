@@ -4429,12 +4429,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerSpeed: 8
   acceleration: 6
-  jumpVelocity: 15
+  jumpVelocity: 20
   jumpMask:
     serializedVersion: 2
     m_Bits: 59
   colliderBounds: {x: 3.2, y: 2.2}
   rayCastLength: 0.6
+  isGrounded: 0
+  offSet: {x: 0, y: 0.85, z: 0}
 --- !u!61 &1366747574
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4448,7 +4450,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.19883752, y: -0.5412105}
+  m_Offset: {x: 0.2712015, y: -1.2381027}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -4459,7 +4461,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.093782, y: 2.087357}
+  m_Size: {x: 4.9667444, y: 0.6935725}
   m_EdgeRadius: 0
 --- !u!50 &1366747575
 Rigidbody2D:
@@ -4473,7 +4475,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 4.4656672
+  m_Mass: 1.4468149
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 2
