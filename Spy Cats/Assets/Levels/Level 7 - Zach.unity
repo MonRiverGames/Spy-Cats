@@ -11907,10 +11907,6 @@ PrefabInstance:
       value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 3166941073299139613, guid: 53e3a16b63a5f334b929c1a8757a1664, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 6200000, guid: 7302fca884df12a4db563e11b3c95354, type: 2}
-    - target: {fileID: 3166941073299139613, guid: 53e3a16b63a5f334b929c1a8757a1664, type: 3}
       propertyPath: m_Interpolate
       value: 1
       objectReference: {fileID: 0}
