@@ -1,10 +1,10 @@
+using Newtonsoft.Json.Bson;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Collectible_Tessla : MonoBehaviour
 {
-    LevelSelection levelSelection;
     // Total number of Collectibles in level
     public int numberOfCollectibles = 4;
     public float timeTillDestroyed = 0.1f;
@@ -14,8 +14,20 @@ public class Collectible_Tessla : MonoBehaviour
     public AudioSource collectSound;
     public AudioSource catHappy;
 
+    public GameObject emmaLevel;
+    public bool isEmmasLevel;
+
+    public bool immediateWin = false;
     // Amount of Collectibles player has gotten
     private int collectibeCount = 0;
+
+    public void Awake()
+    {
+        if (GameObject.Find("Emma Level"))
+        {
+            isEmmasLevel = true;
+        }
+    }
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -23,6 +35,12 @@ public class Collectible_Tessla : MonoBehaviour
         if (other.tag == "Collectible")
         {
             collectibeCount++;
+            if (collectibeCount == numberOfCollectibles && isEmmasLevel)
+            {
+                catHappy.Play();
+                Invoke("ChangeScene", 1);
+            }
+            
             collectSound.Play();
             Destroy(other.gameObject, timeTillDestroyed);
         }
