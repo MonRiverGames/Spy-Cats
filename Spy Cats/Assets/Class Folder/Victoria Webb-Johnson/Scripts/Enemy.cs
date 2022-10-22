@@ -11,16 +11,6 @@ public class Enemy : MonoBehaviour
     public Transform groundDetection;
     public Transform wallDetection;
 
-    void Awake()
-    {
-        
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -72,8 +62,6 @@ public class Enemy : MonoBehaviour
         //Draw wallInfo ray
         Debug.DrawRay(wallDetection.position, Vector2.left * rayLength, Color.blue);
         Debug.DrawRay(wallDetection.position, Vector2.right * rayLength, Color.blue);
-
-        Debug.Log(wallInfo.collider);
 
 
     }

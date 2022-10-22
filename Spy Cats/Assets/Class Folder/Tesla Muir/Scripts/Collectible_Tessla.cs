@@ -23,7 +23,7 @@ public class Collectible_Tessla : MonoBehaviour
         if (other.tag == "Collectible")
         {
             collectibeCount++;
-            if (collectibeCount == numberOfCollectibles)
+            if (immediateWin && collectibeCount == numberOfCollectibles)
             {
                 catHappy.Play();
                 Invoke("ChangeScene", 1);

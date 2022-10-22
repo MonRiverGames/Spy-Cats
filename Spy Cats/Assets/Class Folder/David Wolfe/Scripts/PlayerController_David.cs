@@ -84,10 +84,10 @@ public class PlayerController_David : MonoBehaviour
             GlobalSounds.PlayJumpSound();
         }
         
-        if ((Input.GetButtonDown("Jump") || Input.GetAxis("Vertical") > 0) && rb.velocity.y > 0f)
-        {
-            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
-            anim.Play("CatJump");
-        }
+        //if ((Input.GetButtonDown("Jump") || Input.GetAxis("Vertical") > 0) && rb.velocity.y > 0f)
+        //{
+        //    rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
+        //    anim.Play("CatJump");
+        //}
     }
 }

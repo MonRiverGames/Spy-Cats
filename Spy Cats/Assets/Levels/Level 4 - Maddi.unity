@@ -4429,14 +4429,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerSpeed: 8
   acceleration: 6
-  jumpVelocity: 20
+  jumpVelocity: 19
   jumpMask:
     serializedVersion: 2
     m_Bits: 59
-  colliderBounds: {x: 3.2, y: 2.2}
-  rayCastLength: 0.6
-  isGrounded: 0
-  offSet: {x: 0, y: 0.85, z: 0}
+  colliderBounds: {x: 2.63, y: 0.28}
+  rayCastLength: 0.21
+  offset: {x: 0, y: 0.96, z: 0}
 --- !u!61 &1366747574
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4544,7 +4543,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1366747571}
   m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
-  m_LocalPosition: {x: -3.28, y: 0.17, z: 0}
+  m_LocalPosition: {x: -3.34, y: -1.13, z: 0}
   m_LocalScale: {x: 0.6, y: 0.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

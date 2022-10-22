@@ -36,9 +36,6 @@ public class EnemyScript : MonoBehaviour
         }
 
         Chase();
-        
-
-        Debug.Log(transform.position.x - player.transform.position.x);
     }
 
     public void Chase()

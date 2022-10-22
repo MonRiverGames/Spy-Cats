@@ -1421,12 +1421,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerSpeed: 5
   acceleration: 10
-  jumpVelocity: 5
+  jumpVelocity: 7
   jumpMask:
     serializedVersion: 2
     m_Bits: 123
-  colliderBounds: {x: 3, y: 3.61}
-  rayCastLength: 0.2
+  colliderBounds: {x: 3, y: 0.7}
+  rayCastLength: 0.41
+  offset: {x: 0, y: 0.92, z: 0}
 --- !u!114 &936476688
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -20,8 +20,7 @@ public class Controller_Jackson : MonoBehaviour
 
     // Status Variables
     private bool isJumping = false;
-    public bool isGrounded;
-    public Vector3 offSet;
+    public Vector3 offset;
 
     // Start is called before the first frame update
     void Start()
@@ -37,13 +36,13 @@ public class Controller_Jackson : MonoBehaviour
         SideMovement();
         IsGrounded();
 
-        if (isJumping && isGrounded)
+        if (isJumping && IsGrounded())
         {
             isJumping = false;
             myAnimator.SetBool("isJumping", false);
         }
 
-        if (isGrounded && !isJumping && (Input.GetAxisRaw("Vertical") > 0 || Input.GetButton("Jump")))
+        if (IsGrounded() && !isJumping && (Input.GetAxisRaw("Vertical") > 0 || Input.GetButton("Jump")))
         {
             Jump();
         }
@@ -57,7 +56,7 @@ public class Controller_Jackson : MonoBehaviour
         float xVelocity = Mathf.Lerp(myRigidbody.velocity.x, targetVelocity, acceleration * Time.deltaTime);
 
         myRigidbody.velocity = new Vector2(xVelocity, myRigidbody.velocity.y);
-        if (isGrounded)
+        if (IsGrounded())
         {
             myAnimator.SetFloat("xSpeed", Mathf.Abs(xVelocity));
         }
@@ -74,18 +73,16 @@ public class Controller_Jackson : MonoBehaviour
         }
     }
 
-    /*private bool IsGrounded()
+    private bool IsGrounded()
     {
-        Vector2 origin = new Vector2(transform.position.x, transform.position.y);
+        Vector2 origin = new Vector2(transform.position.x, transform.position.y - offset.y);
         RaycastHit2D groundCheck = Physics2D.BoxCast(origin, colliderBounds, 0, Vector2.down, rayCastLength);
-
-        
 
         return groundCheck;
     }
-    */
     
-    public void IsGrounded()
+    
+    /*public void IsGrounded()
     {
         RaycastHit2D groundCheck = Physics2D.Raycast(transform.position - offSet, Vector2.down, rayCastLength);
         
@@ -100,13 +97,17 @@ public class Controller_Jackson : MonoBehaviour
 
         Debug.DrawRay(transform.position, Vector2.down * rayCastLength, Color.red);
 
+    }*/
+
+    private void OnDrawGizmos()
+    {
+        Vector2 origin = new Vector2(transform.position.x, transform.position.y - offset.y);
+        Gizmos.color = Color.red;
+        Gizmos.DrawCube(origin, colliderBounds);
+        Gizmos.color = Color.blue;
+        Gizmos.DrawCube(origin + Vector2.down * rayCastLength, colliderBounds);
     }
 
-    //private void OnDrawGizmos()
-    //{
-    //    Vector2 origin = new Vector2(transform.position.x, transform.position.y);
-    //    Gizmos.DrawCube(origin, colliderBounds);
-    //}
     void Jump()
     {
         isJumping = true;
