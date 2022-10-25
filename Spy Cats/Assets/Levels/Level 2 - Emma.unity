@@ -1579,7 +1579,7 @@ MonoBehaviour:
     m_StretchHeight: 0
   collectSound: {fileID: 936476689}
   catHappy: {fileID: 936476690}
-  immediateWin: 0
+  immediateWin: 1
 --- !u!82 &936476689
 AudioSource:
   m_ObjectHideFlags: 0
