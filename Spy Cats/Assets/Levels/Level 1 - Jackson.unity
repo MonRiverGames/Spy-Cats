@@ -233,6 +233,18 @@ PrefabInstance:
       propertyPath: speed
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1953252090077581214, guid: b27ed040f159c42a6af89c1359455195, type: 3}
+      propertyPath: deathTime
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1953252090077581214, guid: b27ed040f159c42a6af89c1359455195, type: 3}
+      propertyPath: deathJumpForce
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5152062559976806064, guid: b27ed040f159c42a6af89c1359455195, type: 3}
+      propertyPath: m_GravityScale
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8589462622245645170, guid: b27ed040f159c42a6af89c1359455195, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -631,6 +643,18 @@ PrefabInstance:
     - target: {fileID: 1953252090077581214, guid: b27ed040f159c42a6af89c1359455195, type: 3}
       propertyPath: speed
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1953252090077581214, guid: b27ed040f159c42a6af89c1359455195, type: 3}
+      propertyPath: deathTime
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1953252090077581214, guid: b27ed040f159c42a6af89c1359455195, type: 3}
+      propertyPath: deathJumpForce
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5152062559976806064, guid: b27ed040f159c42a6af89c1359455195, type: 3}
+      propertyPath: m_GravityScale
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 8589462622245645170, guid: b27ed040f159c42a6af89c1359455195, type: 3}
       propertyPath: m_RootOrder
@@ -6463,6 +6487,18 @@ PrefabInstance:
       propertyPath: speed
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1953252090077581214, guid: b27ed040f159c42a6af89c1359455195, type: 3}
+      propertyPath: deathTime
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1953252090077581214, guid: b27ed040f159c42a6af89c1359455195, type: 3}
+      propertyPath: deathJumpForce
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5152062559976806064, guid: b27ed040f159c42a6af89c1359455195, type: 3}
+      propertyPath: m_GravityScale
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8589462622245645170, guid: b27ed040f159c42a6af89c1359455195, type: 3}
       propertyPath: m_RootOrder
       value: 23
@@ -7931,6 +7967,18 @@ PrefabInstance:
       propertyPath: speed
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1953252090077581214, guid: b27ed040f159c42a6af89c1359455195, type: 3}
+      propertyPath: deathTime
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1953252090077581214, guid: b27ed040f159c42a6af89c1359455195, type: 3}
+      propertyPath: deathJumpForce
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5152062559976806064, guid: b27ed040f159c42a6af89c1359455195, type: 3}
+      propertyPath: m_GravityScale
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8589462622245645170, guid: b27ed040f159c42a6af89c1359455195, type: 3}
       propertyPath: m_RootOrder
       value: 22
@@ -8670,7 +8718,6 @@ MonoBehaviour:
     m_Bits: 59
   colliderBounds: {x: 0.71, y: 0.19}
   rayCastLength: 0.16
-  isGrounded: 0
   offset: {x: 0, y: 0.09, z: 0}
 --- !u!61 &1750799259
 BoxCollider2D:
