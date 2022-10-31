@@ -66,4 +66,12 @@ public class MenuManager : MonoBehaviour
         isPaused = true;
         helpMenuCanvas.SetActive(true);
     }
+
+    public void Restart()
+    {
+        
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        ClosePauseMenu();
+        
+    }
 }
