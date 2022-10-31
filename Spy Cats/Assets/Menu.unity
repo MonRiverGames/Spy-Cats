@@ -256,11 +256,6 @@ MonoBehaviour:
   - {fileID: 1100283027}
   - {fileID: 1853759181}
   - {fileID: 720898351}
-  source: {fileID: 0}
-  levelCompleted:
-  - {fileID: 8300000, guid: 8ae4dbde299a14b49ae94405f53add5e, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
   cat: {fileID: 1868026680}
   loadingScreen: {fileID: 736980637}
 --- !u!1 &70090548
@@ -1378,7 +1373,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &736980638
 RectTransform:
   m_ObjectHideFlags: 0
