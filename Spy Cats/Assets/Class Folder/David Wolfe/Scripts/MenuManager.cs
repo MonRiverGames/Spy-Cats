@@ -32,6 +32,7 @@ public class MenuManager : MonoBehaviour
         } else if (Input.GetKeyDown(KeyCode.Escape) && isPaused) 
         {
             pauseMenuCanvas.SetActive(false);
+            helpMenuCanvas.SetActive(false);
             isPaused = false;
             Time.timeScale = 1;
         }
@@ -40,6 +41,7 @@ public class MenuManager : MonoBehaviour
     
     public void GoToMenu(){
         SceneManager.LoadScene("Menu");
+        ClosePauseMenu();
     }
     
     public void QuitGame(){
@@ -60,6 +62,16 @@ public class MenuManager : MonoBehaviour
 
     public void OpenHelpMenu()
     {
+        pauseMenuCanvas.SetActive(true);
+        isPaused = true;
         helpMenuCanvas.SetActive(true);
+    }
+
+    public void Restart()
+    {
+        
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        ClosePauseMenu();
+        
     }
 }

@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class LevelSelection : MonoBehaviour
 {
+    public GameObject helpMenuMain;
     public Button[] levelButtons;
     public GameObject cat;
     
@@ -16,7 +17,13 @@ public class LevelSelection : MonoBehaviour
 
     private void Awake()
     {
+        helpMenuMain = GameObject.Find("Help Screen Main Menu");
         LoadMenu();
+    }
+
+    private void Start()
+    {
+        helpMenuMain.SetActive(false);
     }
 
     void LoadMenu()
@@ -87,6 +94,16 @@ public class LevelSelection : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void OpenHelp()
+    {
+        helpMenuMain.SetActive(true);
+    }
+
+    public void CloseHelp()
+    {
+        helpMenuMain.SetActive(false);
     }
 
 }
