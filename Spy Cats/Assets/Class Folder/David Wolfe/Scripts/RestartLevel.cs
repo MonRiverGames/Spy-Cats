@@ -16,17 +16,10 @@ public class RestartLevel : MonoBehaviour
         
     }
 
+    // For falling off level
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.name == "Player")
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        }
-    }
-    
-    public void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.name == "Player")
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }

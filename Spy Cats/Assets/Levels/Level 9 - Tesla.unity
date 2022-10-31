@@ -6497,7 +6497,7 @@ GameObject:
   - component: {fileID: 953489766}
   - component: {fileID: 953489767}
   m_Layer: 0
-  m_Name: Spy Cat
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6804,6 +6804,7 @@ MonoBehaviour:
     m_StretchHeight: 0
   collectSound: {fileID: 953489765}
   catHappy: {fileID: 953489767}
+  immediateWin: 0
 --- !u!82 &953489764
 AudioSource:
   m_ObjectHideFlags: 0
