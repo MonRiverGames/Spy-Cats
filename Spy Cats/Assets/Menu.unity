@@ -4541,22 +4541,23 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Need Help?
+  m_text: '<color=#00ff00ff><b>Need Help?</b></color>
 
 
-    A - Move Left
+    <color=#ffff00ff><b>A
+    </color></b>or<b><color=#ffff00ff> left arrow</b></color> - Move left
 
 
-    D - Move Right
+    <color=#ffff00ff><b>D
+    </color></b>or<b><color=#ffff00ff> right arrow</b></color> - Move right
 
 
-    ESC - Pause
+    <color=#ffff00ff><b>ESC</b></color>
+    - Pause
 
 
-    Space,
-    W, or Up Arrow - Jump
-
-'
+    <color=#ffff00ff><b>W </color></b>,<b><color=#ffff00ff> space </color></b>or<b><color=#ffff00ff>
+    up arrow</b></color> - Jump'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
   m_sharedMaterial: {fileID: 2140474, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
@@ -5889,22 +5890,23 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Need Help?
+  m_text: '<color=#00ff00ff><b>Need Help?</b></color>
 
 
-    A - Move Left
+    <color=#ffff00ff><b>A
+    </color></b>or<b><color=#ffff00ff> left arrow</b></color> - Move left
 
 
-    D - Move Right
+    <color=#ffff00ff><b>D
+    </color></b>or<b><color=#ffff00ff> right arrow</b></color> - Move right
 
 
-    ESC - Pause
+    <color=#ffff00ff><b>ESC</b></color>
+    - Pause
 
 
-    Space,
-    W, or Up Arrow - Jump
-
-'
+    <color=#ffff00ff><b>W </color></b>,<b><color=#ffff00ff> space </color></b>or<b><color=#ffff00ff>
+    up arrow</b></color> - Jump'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
   m_sharedMaterial: {fileID: 2140474, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
