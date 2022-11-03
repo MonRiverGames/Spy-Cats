@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1caf344d16276d24dbfc1c62712e0df5, type: 3}
+  m_Name: Lvl 8
+  m_EditorClassIdentifier: Assembly-CSharp::NewBehaviourScript
+  briefingText: "Agent, you\u2019ll need to be very careful with this mission. Our
+    intel is showing us that a gem should be within this pyramid, but there are plenty
+    of ancient booby traps and obstacles that could take those 9 lives of yours down
+    to 0. There are also rumors that there is an ancient secret from Anubis, the
+    god of the dead, that could greatly help you within here. "
+  flashingElipsis: 0

@@ -46,7 +46,7 @@ public class LevelSelection : MonoBehaviour
         for (int i = 0; i < levelButtons.Length; i++) {
             int buttonID = i + 1;
             levelButtons[i].onClick.RemoveAllListeners();
-            levelButtons[i].onClick.AddListener(delegate { LevelLoad(buttonID); });
+            levelButtons[i].onClick.AddListener(delegate { BriefingLoad(buttonID); });
         }
     }
 
@@ -69,9 +69,14 @@ public class LevelSelection : MonoBehaviour
         }
     }
 
-    public void LevelLoad(int index)
+    public void BriefingLoad(int index)
     {
         loadingScreen.SetActive(true);
+        loadingScreen.GetComponent<BriefingController>().SetLevelBriefing(index);
+    }
+
+    public void LevelLoad(int index)
+    {
         SceneManager.LoadScene(index);
     }
 

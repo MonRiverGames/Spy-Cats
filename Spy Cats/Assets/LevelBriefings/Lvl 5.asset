@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1caf344d16276d24dbfc1c62712e0df5, type: 3}
+  m_Name: Lvl 5
+  m_EditorClassIdentifier: Assembly-CSharp::NewBehaviourScript
+  briefingText: "I assume you\u2019re a fan of fine art, agent. Maybe a classic Louis
+    Wain? Claude Meow-net? Regardless, there\u2019s another gem within this museum.
+    Be careful though \u2013 the right way to go isn\u2019t always the right way.."
+  flashingElipsis: 1
