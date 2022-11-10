@@ -2692,7 +2692,7 @@ MonoBehaviour:
   catAnim: {fileID: 641440349}
   briefingText: {fileID: 1888469218}
   startButton: {fileID: 1479122842}
-  timeBtwChars: 0.03
+  timeBtwChars: 0.04
 --- !u!1 &764878740
 GameObject:
   m_ObjectHideFlags: 0

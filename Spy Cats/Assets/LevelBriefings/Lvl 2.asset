@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NewBehaviourScript
   briefingText: "Agent, your next mission will be in a pool hall. There definitely
     could be some seedy characters around, so watch your tail. Our intel is saying
-    that there are two \u201Cpool balls\u201D you\u2019ll need to get, which should
-    broaden your horizons to another one. I trust you can figure this out, agent.."
+    that there are two \u201C8 balls\u201D you\u2019ll need to get, which should
+    help you reach another one. I trust you can figure this out, agent.."
   flashingElipsis: 1
