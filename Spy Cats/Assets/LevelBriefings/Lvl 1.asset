@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1caf344d16276d24dbfc1c62712e0df5, type: 3}
+  m_Name: Lvl 1
+  m_EditorClassIdentifier: Assembly-CSharp::NewBehaviourScript
+  briefingText: "This city never sleeps, and neither do you agent. Our intel tells
+    us that there should be the first of the gems somewhere around here. We\u2019re
+    being told something about a striped, blue curtain near it? Try and not rip that
+    up \u2013 we know it can be difficult for you. Don\u2019t overcomplicate things.."
+  flashingElipsis: 1

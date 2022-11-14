@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1caf344d16276d24dbfc1c62712e0df5, type: 3}
+  m_Name: Lvl 10
+  m_EditorClassIdentifier: Assembly-CSharp::NewBehaviourScript
+  briefingText: Oh, so you found the secret level? This is an expanded version of
+    level 8. There are two routes to completing this level. Good luck..
+  flashingElipsis: 1
