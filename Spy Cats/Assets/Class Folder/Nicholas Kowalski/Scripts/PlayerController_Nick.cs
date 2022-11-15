@@ -15,6 +15,7 @@ public class PlayerController_Nick : MonoBehaviour
     private Rigidbody2D myRigidbody;
     private Animator myAnimator;
     private SpriteRenderer mySpriteRenderer;
+    private Collider2D myCollider;
 
     // Status Variables
     private bool isJumping = false;
@@ -28,6 +29,7 @@ public class PlayerController_Nick : MonoBehaviour
         myRigidbody = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
         mySpriteRenderer = GetComponent<SpriteRenderer>();
+        myCollider = GetComponent<Collider2D>();
     }
 
     // Update is called once per frame
@@ -72,12 +74,13 @@ public class PlayerController_Nick : MonoBehaviour
 
     private bool IsGrounded()
     {
-        Vector2 origin = new Vector2(mySpriteRenderer.bounds.center.x, mySpriteRenderer.bounds.min.y);
-        Vector2 size = new Vector2(1.85f, .3f);
-        RaycastHit2D groundCheck = Physics2D.BoxCast(origin, size, 0, Vector2.down, .1f);
+        Vector2 origin = myCollider.bounds.center;
+        Vector2 size = myCollider.bounds.size;
+        RaycastHit2D groundCheck = Physics2D.BoxCast(origin, size - Vector2.right * .05f, 0, Vector2.down, .4f, jumpMask);
 
         return groundCheck;
     }
+
 
     void Jump()
     {
