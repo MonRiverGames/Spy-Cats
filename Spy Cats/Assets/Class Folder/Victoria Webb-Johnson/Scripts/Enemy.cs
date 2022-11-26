@@ -15,7 +15,14 @@ public class Enemy : MonoBehaviour
     public Transform groundDetection;
     public Transform wallDetection;
 
+    private AudioSource audioSource;
+    [SerializeField] private AudioClip deathSound;
+    
 
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
     // Update is called once per frame
     void Update()
     {
@@ -94,6 +101,7 @@ public class Enemy : MonoBehaviour
     IEnumerator FallOutOfLevel(float duration)
     {
         isDead = true;
+        audioSource.PlayOneShot(deathSound);
         Vector2 startScale = transform.localScale;
         Vector2 endScale = transform.localScale;
         endScale.y = startScale.y / 2;
