@@ -10,7 +10,7 @@ public class LevelSelection : MonoBehaviour
     public Button[] levelButtons;
     public GameObject cat;
     public GameObject credits;
-    
+    public static bool creditsFlag = false;
 
     public static LevelSelection instance;
     public GameObject loadingScreen;
@@ -48,6 +48,11 @@ public class LevelSelection : MonoBehaviour
             levelButtons[i].onClick.RemoveAllListeners();
             levelButtons[i].onClick.AddListener(delegate { BriefingLoad(buttonID); });
         }
+        if (creditsFlag)
+        {
+            creditsFlag = false;
+            credits.SetActive(true);
+        }
     }
 
     private void Update()
@@ -64,13 +69,10 @@ public class LevelSelection : MonoBehaviour
             PlayerPrefs.SetInt("levelAt", levelAt + 1);
             if (levelAt == 9)
             {
-                credits.SetActive(true);
-                PlayerPrefs.Save();
-                return;
+                creditsFlag = true;
             }
             PlayerPrefs.Save();
             SceneManager.LoadScene(0);
-            LoadMenu();
         }
     }
 
@@ -94,19 +96,14 @@ public class LevelSelection : MonoBehaviour
         {
             PlayerPrefs.SetInt("levelAt", currentLevel + 1);
             PlayerPrefs.Save();
-            if (currentLevel == 8)
+            if (currentLevel == 9)
             {
-                SceneManager.LoadScene(0);
-                instance.LoadMenu();
-                instance.credits.SetActive(true);
-                return;
+                creditsFlag = true;
             }
         }
         SceneManager.LoadScene(0);
         
     }
-    
-   
 
     public void QuitGame()
     {
