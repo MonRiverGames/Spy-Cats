@@ -9,7 +9,7 @@ public class LevelSelection : MonoBehaviour
     public GameObject helpMenuMain;
     public Button[] levelButtons;
     public GameObject cat;
-    
+    public GameObject credits;
     
 
     public static LevelSelection instance;
@@ -62,7 +62,12 @@ public class LevelSelection : MonoBehaviour
         {
             int levelAt = PlayerPrefs.GetInt("levelAt", 1);
             PlayerPrefs.SetInt("levelAt", levelAt + 1);
-            
+            if (levelAt == 9)
+            {
+                credits.SetActive(true);
+                PlayerPrefs.Save();
+                return;
+            }
             PlayerPrefs.Save();
             SceneManager.LoadScene(0);
             LoadMenu();
@@ -89,6 +94,13 @@ public class LevelSelection : MonoBehaviour
         {
             PlayerPrefs.SetInt("levelAt", currentLevel + 1);
             PlayerPrefs.Save();
+            if (currentLevel == 8)
+            {
+                SceneManager.LoadScene(0);
+                instance.LoadMenu();
+                instance.credits.SetActive(true);
+                return;
+            }
         }
         SceneManager.LoadScene(0);
         
